@@ -36,7 +36,7 @@ install -m 1770 -d %buildroot/%_var/spool/jurt/builds/logs/
 install -m 1770 -d %buildroot/%_var/spool/jurt/builds/fail/
 install -m 1770 -d %buildroot/%_var/spool/jurt/builds/success/
 install -m 1770 -d %buildroot/%_var/spool/jurt/chroots/
-install 0770 -d %buildroot/%_var/spool/jurt/chroots/cached
+install -m 0770 -d %buildroot/%_var/spool/jurt/chroots/cached
 
 %clean
 %__rm -rf %buildroot
