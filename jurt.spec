@@ -1,8 +1,8 @@
 Name:		jurt
 Summary:	A package builder
-Version:	0.01
+Version:	0.02
 Release:	1
-Source0:	jurt-0.01.tar.gz
+Source0:	%name-%version.tar.gz
 URL:		http://gitorious.org/jurt
 Group:		Development/Python
 BuildRoot:	%_tmppath/%name-%version-%release-buildroot
@@ -36,6 +36,10 @@ install -m 1770 -d %buildroot/%_var/spool/jurt/builds/logs/
 install -m 1770 -d %buildroot/%_var/spool/jurt/builds/fail/
 install -m 1770 -d %buildroot/%_var/spool/jurt/builds/success/
 install -m 1770 -d %buildroot/%_var/spool/jurt/chroots/
+install -m 1770 -d %buildroot/%_var/spool/jurt/chroots/temp/
+install -m 1770 -d %buildroot/%_var/spool/jurt/chroots/active/
+install -m 1770 -d %buildroot/%_var/spool/jurt/chroots/old/
+install -m 1770 -d %buildroot/%_var/spool/jurt/chroots/keep/
 install -m 0770 -d %buildroot/%_var/spool/jurt/chroots/cached
 
 %clean
@@ -49,7 +53,7 @@ install -m 0770 -d %buildroot/%_var/spool/jurt/chroots/cached
 
 %files
 %defattr(-,root,root)
-%doc README
+%doc README LICENSE
 %config(noreplace) %_sysconfdir/jurt/jurt.conf
 %{py_sitedir}/*
 %_sbindir/jurt-root-command
@@ -60,10 +64,16 @@ install -m 0770 -d %buildroot/%_var/spool/jurt/chroots/cached
 %_bindir/jurt-put
 %_bindir/jurt-showrc
 %_bindir/jurt-list-targets
+%_bindir/jurt-list-roots
 %_bindir/jurt-test-sudo
 %attr(1770,root,jurt) %dir %_var/spool/jurt/builds/spools/
 %attr(1770,root,jurt) %dir %_var/spool/jurt/builds/logs/
 %attr(1770,root,jurt) %dir %_var/spool/jurt/builds/fail/
 %attr(1770,root,jurt) %dir %_var/spool/jurt/builds/success/
 %attr(1770,root,jurt) %dir %_var/spool/jurt/chroots/
+%attr(1770,root,jurt) %dir %_var/spool/jurt/chroots/temp/
+%attr(1770,root,jurt) %dir %_var/spool/jurt/chroots/active/
+%attr(1770,root,jurt) %dir %_var/spool/jurt/chroots/old/
+%attr(1770,root,jurt) %dir %_var/spool/jurt/chroots/keep/
 %_var/spool/jurt/chroots/cached/
+%{_mandir}/*/*
