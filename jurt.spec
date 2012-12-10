@@ -77,3 +77,21 @@ install -m 0770 -d %buildroot/%_var/spool/jurt/chroots/cached
 %attr(1770,root,jurt) %dir %_var/spool/jurt/chroots/keep/
 %_var/spool/jurt/chroots/cached/
 %{_mandir}/*/*
+
+
+%changelog
+* Tue Sep 27 2011 Bogdano Arendartchuk <bogdano@mandriva.com> 0.02-1
++ Revision: 701405
+- new version 0.02:
+  o added a man page
+  o added option -b<STAGE> to jurt-build (as in iurt)
+  o added option -d<SECS> to define build time limit in jurt-build
+  o added command jurt-list-roots
+  o chroots used for build are removed afterwards
+  o allow setting binds and mount points for each target
+  o tons of bugfixes and small improvements
+
+* Thu Mar 03 2011 Bogdano Arendartchuk <bogdano@mandriva.com> 0.01-1
++ Revision: 641501
+- imported package jurt
+
