@@ -1,7 +1,7 @@
 Name:		jurt
 Summary:	A package builder
 Version:	0.02
-Release:	1
+Release:	2
 Source0:	%name-%version.tar.gz
 URL:		http://gitorious.org/jurt
 Group:		Development/Python
