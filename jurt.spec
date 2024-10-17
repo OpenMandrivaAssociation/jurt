@@ -3,7 +3,7 @@ Summary:	A package builder
 Version:	0.02
 Release:	2
 Source0:	%name-%version.tar.gz
-URL:		http://gitorious.org/jurt
+URL:		https://gitorious.org/jurt
 Group:		Development/Python
 BuildRoot:	%_tmppath/%name-%version-%release-buildroot
 BuildArch:	noarch
